@@ -17,10 +17,10 @@ public class Porcupine {
 
         guard let resourceBundleURL = myBundle.url(
              forResource: "PorcupineResources", withExtension: "bundle")
-        else { fatalError("PorcupineResources.bundle not found") }
+        else { return myBundle/*fatalError("PorcupineResources.bundle not found")*/ }
 
         guard let resourceBundle = Bundle(url: resourceBundleURL)
-            else { fatalError("Could not open PorcupineResources.bundle") }
+            else { return myBundle/*fatalError("Could not open PorcupineResources.bundle")*/ }
 
         return resourceBundle
     }()

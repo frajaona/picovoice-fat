@@ -29,10 +29,10 @@ public class Rhino {
 
         guard let resourceBundleURL = myBundle.url(
              forResource: "RhinoResources", withExtension: "bundle")
-        else { fatalError("RhinoResources.bundle not found") }
+        else { return myBundle/*fatalError("RhinoResources.bundle not found")*/ }
 
         guard let resourceBundle = Bundle(url: resourceBundleURL)
-            else { fatalError("Could not open RhinoResources.bundle") }
+            else { return myBundle/*fatalError("Could not open RhinoResources.bundle")*/ }
 
         return resourceBundle
     }()
